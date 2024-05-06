@@ -1,0 +1,8 @@
+venv
+
+__pycache__
+
+#hackers_test
+
+data/hackers_test/hackers_test_processed.json
+data/hackers_test/hackers_test_raw.csv
