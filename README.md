@@ -7,9 +7,11 @@ showdata.py 파일은 데이터 저장 구조 확인용이며 추후 삭제 예�
 ## 레포지토리 클론 직후 해야할 것
 1. powershell에서 python -m venv venv 명령어 입력하여 가상 환경 생성 (최상위 폴더 바로 밑으로 생성되야 합니다)
 
-2. Ctrl + Shift + P로 검색창 열고 interpreter 입력 -> Python: 인터프리터 설정 클릭 -> 인터프리터 경로 입력 클릭 -> 찾기 클릭 후 프로젝트 폴더의 venv/Scripts/python.exe으로 인터프리터 설정
+2. powershell에서 venv/Scripts/activate 명령어 입력하여 가상 환경 실행 (Mac의 경우 venv/bin/activate)
 
-3. pip install -r requirements.txt 명령어로 필요 패키지 다운
+3. Ctrl + Shift + P로 검색창 열고 interpreter 입력 -> Python: 인터프리터 설정 클릭 -> 인터프리터 경로 입력 클릭 -> 찾기 클릭 후 프로젝트 폴더의 venv/Scripts/python.exe으로 인터프리터 설정
+
+4. powershell에서 pip install -r requirements.txt 명령어로 필요 패키지 다운
 
 ## Hackers Test Data Set 생성 방법
 1. 해당 블로그의 xlsx 파일 다운로드 https://m.blog.naver.com/iireh/222511526229
