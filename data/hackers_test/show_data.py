@@ -2,6 +2,6 @@ import sys
 
 sys.path.append('.')
 
-from src.data_processing import *
+from module.data_processing import *
 
 print(json_to_dict('hackers_test'))
