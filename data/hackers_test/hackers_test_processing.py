@@ -2,7 +2,7 @@ import sys
 sys.path.append('.')
 
 import pandas as pd
-from src.data_processing import *
+from src.module.data_processing import *
 
 df = pd.read_csv('data/hackers_test/hackers_test_raw.csv', encoding='cp949')
 
