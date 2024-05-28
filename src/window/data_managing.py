@@ -6,36 +6,7 @@ from PyQt6 import uic
 
 sys.path.append('.')
 
-import pandas as pd
 from src.module.data_processing import *
-
-df = pd.read_csv('data/hackers_test/hackers_test_raw.csv', encoding='cp949')
-
-df.drop(['Day', 'Unnamed: 4', 'Unnamed: 5', '외움'], axis=1, inplace=True)
-
-df['뜻'] = df['뜻'].apply(remove_parentheses).apply(remove_comma).apply(remove_semicolon).apply(remove_whitespace)
-df = df[~df['뜻'].str.contains('~')]
-
-dict = {row[0]: row[1] for row in df.itertuples(index=False)}
-
-
-with open('data/hackers_test/hackers_test_processed.json', 'w', encoding='utf-8') as f:
-    f.write(dict_to_json(dict))
-
-def save_words(words, filename):
-    with open(filename, 'w', encoding='utf-8') as file:
-        json.dump(words, file, ensure_ascii=False, indent=4)
-
-def add_word(words, word, meaning):
-    words[word] = meaning
-
-def remove_word(words, word):
-    if word in words:
-        del words[word]
-
-def update_word(words, word, meaning):
-    if word in words:
-        words[word] = meaning
 
 #UI파일 연결
 #단, UI파일은 Python 코드 파일과 같은 디렉토리에 위치해야한다.
@@ -61,13 +32,6 @@ class WindowClass(QMainWindow, form_class) :
         word = self.lineEdit.text()
         meaning = self.lineEdit_2.text()
         remove_word(words, word)
-        save_words(words, filename)
-    def button_update(self) :
-        filename = 'data/hackers_test/hackers_test_processed.json'
-        words = json_to_dict('hackers_test')
-        word = self.lineEdit.text()
-        meaning = self.lineEdit_2.text()
-        update_word(words, word, meaning)
         save_words(words, filename)
 
 if __name__ == "__main__" :
