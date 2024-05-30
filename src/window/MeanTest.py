@@ -9,7 +9,7 @@ class EnglishWordGame(QMainWindow):
         super().__init__()
 
         # UI 파일을 로드합니다.
-        uic.loadUi('MeanTest.ui', self)
+        uic.loadUi('src/ui/MeanTest.ui', self)
 
         # 단어 리스트 초기화
         self.words = []
